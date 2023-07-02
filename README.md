@@ -1,2 +1,2 @@
-# PowerShell_Teil1
-Einführungskurs PowerShell
+# PowerShell
+Einführungskurs PowerShell Teil 1 und 2
