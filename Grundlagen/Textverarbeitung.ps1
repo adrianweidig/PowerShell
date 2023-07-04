@@ -119,3 +119,4 @@ $strFormatierterText = "`t`t$strText8"
 # Ergebnis ausgeben
 Write-Host "Der formatierte Text lautet:"
 Write-Host $strFormatierterText
+

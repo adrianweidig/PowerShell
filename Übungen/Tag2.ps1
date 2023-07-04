@@ -46,6 +46,7 @@ Get-EventLog -LogName System -EntryType Error -Newest 2
 
 # 13. Ausgehend von Frage 11 listen Sie die Fehler der letzten 48 Stunden auf.
 Get-EventLog -LogName System -EntryType Error -After (Get-Date).AddHours(-48)
+Get-EventLog -LogName System -EntryType Error -After ((Get-Date)-(New-TimeSpan -Hours 48))
 
 # 14. Sorgen Sie dafür, dass beim Aufruf des Befehls „edit“ das Programm „write.exe“ gestartet wird.
 New-Alias -Name "edit" -Value "write.exe"
