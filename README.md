@@ -15,3 +15,9 @@ https://github.com/PowerShell/vscode-powershell/issues/1035#issuecomment-3310608
 >"files.encoding": "windows1252""
 
 ACHTUNG: Dies funktioniert nur für neue Dateien nach der Änderung
+
+## PowerShell zeigt meine Ausgaben in der falschen Reihenfolge an?
+https://stackoverflow.com/questions/54344622/why-my-powershell-script-is-not-respecting-the-steps-order
+
+> If you try to test using Write-Output instead of Write-Host I would guess you get it in the correct order, 
+> since Write-Output sends an object to the console through the pipeline.

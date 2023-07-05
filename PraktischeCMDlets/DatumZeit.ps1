@@ -1,3 +1,7 @@
+# Gute Quellen:
+# https://learn.microsoft.com/de-de/powershell/module/microsoft.powershell.utility/get-date?view=powershell-7.3
+# https://www.msxfaq.de/code/powershell/psdatetime.htm
+
 ##############################################
 # Abschnitt 1: Aktuelles Datum anzeigen
 ##############################################
@@ -117,3 +121,27 @@ try {
 } catch {
     Write-Host "Ungültiges Datumsformat. Bitte geben Sie das Datum im Format TT.MM.JJJJ ein."
 }
+
+##############################################
+# Abschnitt 8: Formatierung von Datum
+##############################################
+
+Write-Host "`n=== Abschnitt 8: Formatierung von Datum ===`n"
+
+# Aktuelles Datum abrufen
+$aktuellesDatum = Get-Date
+
+# Datumsformatierungen mit dem Parameter -f
+$formatiertesDatum1 = "{0:dd.MM.yyyy}" -f $aktuellesDatum
+Write-Host "Formatiertes Datum (TT.MM.JJJJ): $formatiertesDatum1"
+
+$formatiertesDatum2 = "{0:yyyy-MM-dd}" -f $aktuellesDatum
+Write-Host "Formatiertes Datum (JJJJ-MM-TT): $formatiertesDatum2"
+
+$formatiertesDatum3 = "{0:ddd, dd MMM yyyy}" -f $aktuellesDatum
+Write-Host "Formatiertes Datum (Wochentag, TT Monat JJJJ): $formatiertesDatum3"
+
+$formatiertesDatum4 = "{0:D}" -f $aktuellesDatum
+Write-Host "Formatiertes Datum (Langes Datum): $formatiertesDatum4"
+
+

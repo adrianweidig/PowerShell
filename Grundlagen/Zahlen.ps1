@@ -1,3 +1,8 @@
+# Praktische Quellen:
+# https://learn.microsoft.com/de-de/powershell/module/microsoft.powershell.core/about/about_arithmetic_operators?view=powershell-7.3
+# https://mcpmag.com/articles/2018/01/10/math-with-powershell.aspx
+
+
 ##############################################
 # Abschnitt 1: Grundrechenarten
 ##############################################
@@ -103,9 +108,9 @@ Write-Host "Gerundet auf 2 Dezimalstellen: $gerundetAufDezimalstellen"
 $hexadezimal = [convert]::ToString($zahl1, 16)
 Write-Host "Zahl $zahl1 in Hexadezimalformat: $hexadezimal"
 
-# Konvertierung von Zahl in Binärformat
-$binär = [convert]::ToString($zahl1, 2)
-Write-Host "Zahl $zahl1 in Binärformat: $binär"
+# Konvertierung von Zahl in Binaerformat
+$binaer = [convert]::ToString($zahl1, 2)
+Write-Host "Zahl $zahl1 in Binaerformat: $binaer"
 
 
 ##############################################
@@ -136,3 +141,40 @@ Write-Host "Zufallszahl zwischen 0 und 1: $zufallszahl"
 # Zufallszahl in einem bestimmten Bereich generieren
 $zufallszahlBereich = Get-Random -Minimum 1 -Maximum 100
 Write-Host "Zufallszahl zwischen 1 und 100: $zufallszahlBereich"
+
+##############################################
+# Abschnitt 6: Formatierungen mit -f
+##############################################
+
+Write-Host "`n=== Abschnitt 6: Formatierungen mit -f ===`n"
+
+$zahl = 12345.6789
+
+# Ganzzahlige Darstellung
+$formatGanzzahl = "{0:G}" -f $zahl
+Write-Host "Ganzzahlige Darstellung: $formatGanzzahl"
+
+# Dezimale Darstellung mit festgelegter Anzahl von Dezimalstellen
+$formatDezimal = "{0:N2}" -f $zahl
+Write-Host "Dezimale Darstellung mit 2 Dezimalstellen: $formatDezimal"
+
+# Wissenschaftliche Notation
+$formatWissenschaftlich = "{0:E2}" -f $zahl
+Write-Host "Wissenschaftliche Notation: $formatWissenschaftlich"
+
+# Hexadezimale Darstellung
+$formatHexadezimal = "{0:X}" -f $zahl
+Write-Host "Hexadezimale Darstellung: $formatHexadezimal"
+
+# W?hrungsdarstellung
+$formatW?hrung = "{0:C}" -f $zahl
+Write-Host "W?hrungsdarstellung: $formatW?hrung"
+
+# Prozentsatzdarstellung
+$formatProzent = "{0:P}" -f $zahl
+Write-Host "Prozentsatzdarstellung: $formatProzent"
+
+# F?hrende Nullen
+$zahlMitFuehrendenNullen = "{0:00000.00}" -f $zahl
+Write-Host "Darstellung mit f?hrenden Nullen: $zahlMitFuehrendenNullen"
+

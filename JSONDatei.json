@@ -1,0 +1,17 @@
+﻿[
+    {
+        "Stadt":  "Berlin",
+        "Name":  "Max Mustermann",
+        "Alter":  25
+    },
+    {
+        "Stadt":  "Hamburg",
+        "Name":  "Erika Musterfrau",
+        "Alter":  30
+    },
+    {
+        "Stadt":  "München",
+        "Name":  "Hans Meier",
+        "Alter":  35
+    }
+]
