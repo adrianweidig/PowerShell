@@ -193,3 +193,45 @@ $remoteComputer = "RemoteComputer"
 
 # Remote-Computer neustarten
 Restart-Computer -ComputerName $remoteComputer -Force
+
+##############################################
+# Abschnitt 11: Remoting über SSL
+##############################################
+
+Write-Host "=== Abschnitt 11: Remoting über SSL ===`n"
+
+# Voraussetzungen für Remoting über SSL
+# 1. Auf beiden Computern muss eine Zertifizierungsstelle (CA) installiert sein.
+# 2. Auf dem Remotecomputer muss ein Zertifikat installiert sein, das von der CA ausgestellt wurde.
+# 3. Auf beiden Computern muss der WinRM-Dienst konfiguriert sein, um SSL zu verwenden.
+# 4. Die Firewall auf beiden Computern muss den eingehenden und ausgehenden Datenverkehr für den WinRM-Dienst über Port 5986 (standardmäßig) zulassen.
+
+# Remote-Computername und Zertifikatpfad festlegen
+$remoteComputer = "RemoteComputer"
+$certificatePath = "C:\Pfad\Zum\Zertifikat.pfx"
+
+# Zertifikat importieren
+Import-PfxCertificate -FilePath $certificatePath -CertStoreLocation Cert:\LocalMachine\My
+
+# WinRM-Dienst auf dem Remote-Computer konfigurieren ggf. Lokal nicht über Skript
+Invoke-Command -ComputerName $remoteComputer -ScriptBlock {
+    Set-Item -Path WSMan:\localhost\Service\Auth\Basic -Value $false
+    Set-Item -Path WSMan:\localhost\Service\Auth\Digest -Value $false
+    Set-Item -Path WSMan:\localhost\Service\Auth\Kerberos -Value $false
+    Set-Item -Path WSMan:\localhost\Service\Auth\Negotiate -Value $false
+    Set-Item -Path WSMan:\localhost\Service\Auth\Certificate -Value $true
+    Set-Item -Path WSMan:\localhost\Service\AllowUnencrypted -Value $false
+    Set-Item -Path WSMan:\localhost\Service\EnableCompatibilityHttpsListener -Value $false
+    Set-Item -Path WSMan:\localhost\Service\EnableSsl -Value $true
+}
+
+# PSSession mit SSL erstellen
+$session = New-PSSession -ComputerName $remoteComputer -UseSSL
+
+# Befehl auf dem Remote-Computer mit SSL ausführen
+Invoke-Command -Session $session -ScriptBlock {
+    Get-Process
+}
+
+# PSSession beenden
+Remove-PSSession -Session $session

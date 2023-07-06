@@ -80,10 +80,11 @@ Write-Output "`n=== Abschnitt 4: JSON-Daten bearbeiten ===`n"
 # Spalte für die Bearbeitung auswählen
 $bearbeitungsSpalte = "Name"
 
-# Neue Werte für die ausgewählte Spalte festlegen
-$newValues = $gefilterteDaten | ForEach-Object {
-    $_.$bearbeitungsSpalte = "Bearbeitet - " + $_.$bearbeitungsSpalte
-    $_
+# Neue Werte für die ausgewählte Spalte festlegen mit einer normalen For-Each-Schleife
+$newValues = @()
+foreach ($element in $gefilterteDaten) {
+    $element.$bearbeitungsSpalte = "Bearbeitet - " + $element.$bearbeitungsSpalte
+    $newValues += $element
 }
 
 # Ausgabe der bearbeiteten Daten
