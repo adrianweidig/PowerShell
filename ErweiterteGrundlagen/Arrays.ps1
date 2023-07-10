@@ -1,8 +1,8 @@
 ##############################################
-# Abschnitt 1: Einführung in Arrays
+# Abschnitt 1: EinfÃ¼hrung in Arrays
 ##############################################
 
-Write-Output "`n### Abschnitt 1: Einführung in Arrays ###`n"
+Write-Output "`n### Abschnitt 1: EinfÃ¼hrung in Arrays ###`n"
 
 # Arrays erstellen
 $fruechte = @("Apfel", "Banane", "Kirsche", "Orange")
@@ -16,12 +16,12 @@ Write-Output "`nInhalt des Arrays $ zahlen:"
 $zahlen | ForEach-Object { Write-Output $_ }
 
 ##############################################
-# Abschnitt 2: Elemente zu Arrays hinzufügen
+# Abschnitt 2: Elemente zu Arrays hinzufÃ¼gen
 ##############################################
 
-Write-Output "`n### Abschnitt 2: Elemente zu Arrays hinzufügen ###`n"
+Write-Output "`n### Abschnitt 2: Elemente zu Arrays hinzufÃ¼gen ###`n"
 
-# Elemente zu Arrays hinzufügen
+# Elemente zu Arrays hinzufÃ¼gen
 $fruechte += "Mango"
 $zahlen += 6, 7, 8
 
@@ -47,18 +47,18 @@ Write-Output "Erstes Element des Arrays $ fruechte: $erstesElement"
 Write-Output "Drittes Element des Arrays $ zahlen: $drittesElement"
  
 ##############################################
-# Abschnitt 4: Array-Länge ermitteln
+# Abschnitt 4: Array-LÃ¤nge ermitteln
 ##############################################
 
-Write-Output "`n### Abschnitt 4: Array-Länge ermitteln ###`n"
+Write-Output "`n### Abschnitt 4: Array-LÃ¤nge ermitteln ###`n"
 
-# Array-Länge ermitteln
+# Array-LÃ¤nge ermitteln
 $fruechteLaenge = $fruechte.Length
 $zahlenLaenge = $zahlen.Length
 
-# Array-Länge ausgeben
-Write-Output "Länge des Arrays $ fruechte: $fruechteLaenge"
-Write-Output "Länge des Arrays $ zahlen: $zahlenLaenge"
+# Array-LÃ¤nge ausgeben
+Write-Output "LÃ¤nge des Arrays $ fruechte: $fruechteLaenge"
+Write-Output "LÃ¤nge des Arrays $ zahlen: $zahlenLaenge"
 
 ##############################################
 # Abschnitt 5: Arrays durchlaufen
@@ -106,16 +106,16 @@ while ($index -lt $fruechte.Length) {
     $index++
 }
 
-# Beispiel 2: Zählerschleife
-Write-Output "`nBeispiel 2: Zählerschleife`n"
+# Beispiel 2: ZÃ¤hlerschleife
+Write-Output "`nBeispiel 2: ZÃ¤hlerschleife`n"
 
 for ($i = 0; $i -lt $fruechte.Length; $i++) {
     $element = $fruechte[$i]
     Write-Output "Element an Index $i : $element"
 }
 
-# Beispiel 3: Fußschleife
-Write-Output "`nBeispiel 3: Fußschleife`n"
+# Beispiel 3: FuÃŸschleife
+Write-Output "`nBeispiel 3: FuÃŸschleife`n"
 
 foreach ($element in $fruechte) {
     $index = [array]::IndexOf($fruechte, $element)

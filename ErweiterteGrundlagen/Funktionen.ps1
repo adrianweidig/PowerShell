@@ -1,8 +1,8 @@
 ##############################################
-# Abschnitt 1: Einführung in Funktionen
+# Abschnitt 1: EinfÃ¼hrung in Funktionen
 ##############################################
 
-Write-Host "`n### Abschnitt 1: Einführung in Funktionen ###`n"
+Write-Host "`n### Abschnitt 1: EinfÃ¼hrung in Funktionen ###`n"
 
 # Funktion definieren
 Function SayHello {
@@ -21,6 +21,7 @@ Write-Host "`n### Abschnitt 2: Funktionen mit Parametern ###`n"
 # Funktion mit Parametern definieren
 Function Greet {
     param (
+        # Definiert einen Parameter als "verpflichtend"
         [Parameter(Mandatory=$true)]
         [String]$name
     )
@@ -28,16 +29,16 @@ Function Greet {
     Write-Host "Hallo, $name! Willkommen zur Funktion Greet!"
 }
 
-# Funktion aufrufen und Parameter übergeben
+# Funktion aufrufen und Parameter Ã¼bergeben
 Greet -name "Alice"
 
 ##############################################
-# Abschnitt 3: Rückgabewerte von Funktionen
+# Abschnitt 3: RÃ¼ckgabewerte von Funktionen
 ##############################################
 
-Write-Host "`n### Abschnitt 3: Rückgabewerte von Funktionen ###`n"
+Write-Host "`n### Abschnitt 3: RÃ¼ckgabewerte von Funktionen ###`n"
 
-# Funktion mit Rückgabewert definieren
+# Funktion mit RÃ¼ckgabewert definieren
 Function AddNumbers {
     param (
         [Parameter(Mandatory=$true)]
@@ -50,17 +51,17 @@ Function AddNumbers {
     return $sum
 }
 
-# Funktion aufrufen und Rückgabewert verwenden
+# Funktion aufrufen und RÃ¼ckgabewert verwenden
 $result = AddNumbers -num1 5 -num2 3
 Write-Host "Das Ergebnis der Addition ist: $result"
 
 ##############################################
-# Abschnitt 4: Funktionen als Parameter übergeben
+# Abschnitt 4: Funktionen als Parameter Ã¼bergeben
 ##############################################
 
-Write-Host "`n### Abschnitt 4: Funktionen als Parameter übergeben ###`n"
+Write-Host "`n### Abschnitt 4: Funktionen als Parameter Ã¼bergeben ###`n"
 
-# Funktionen als Parameter übergeben
+# Funktionen als Parameter Ã¼bergeben
 Function ExecuteOperation {
     param (
         [Parameter(Mandatory=$true)]
@@ -81,6 +82,84 @@ $addition = {
     return $a + $b
 }
 
-# Funktion ExecuteOperation aufrufen und Funktion $addition übergeben
+# Funktion ExecuteOperation aufrufen und Funktion $addition Ã¼bergeben
 $addResult = ExecuteOperation -operation $addition -num1 7 -num2 4
 Write-Host "Das Ergebnis der Addition ist: $addResult"
+
+##############################################
+# Abschnitt 5: Weitere Attribute fÃ¼r Parameter
+##############################################
+
+Write-Host "`n### Abschnitt 5: Weitere Attribute fÃ¼r Parameter ###`n"
+
+# Mandatory - Legt fest, dass ein Parameter nicht optional ist
+Function SayHello {
+    param (
+        [Parameter(Mandatory=$true)]
+        [String]$name
+    )
+
+    Write-Host "Hallo, $name! Willkommen zur Funktion SayHello!"
+}
+
+# Funktion mit Position-Attribut und Parameterarray definieren
+Function Greet {
+    param (
+        [Parameter(Position=0)]
+        [String[]]
+        $names
+    )
+
+    foreach ($name in $names) {
+        Write-Host "Hallo, $name! Willkommen zur Funktion Greet!"
+    }
+}
+
+
+# ValueFromPipeline - Legt fest, dass der Parameter Argumente von der Pipeline akzeptiert
+Function Process-Name {
+    param (
+        [Parameter(ValueFromPipeline=$true)]
+        [String]$name
+    )
+
+    Write-Host "Verarbeite den Namen: $name"
+}
+
+# HelpMessage - Bietet die MÃ¶glichkeit, eine kurze Hilfe fÃ¼r den Parameter anzugeben
+Function Get-Info {
+    param (
+        [Parameter(HelpMessage="Geben Sie den Computer-Namen ein.")]
+        [String]$computerName
+    )
+
+    Write-Host "Abrufen von Informationen fÃ¼r den Computer: $computerName"
+}
+
+# Alias - Legt einen alternativen Namen fÃ¼r den Parameter fest
+Function Get-Info {
+    param (
+        [Parameter(Mandatory=$true)]
+        [Alias("CN")]
+        [String]$computerName
+    )
+
+    Write-Host "Abrufen von Informationen fÃ¼r den Computer: $computerName"
+}
+
+# Weitere Attribute wie AllowNull, AllowEmptyString, AllowEmptyCollection, ValidateCount, ValidateLength, ValidatePattern,
+# ValidateRange, ValidateScript, ValidateSet, ValidateNotNull, ValidateNotNullOrEmpty kÃ¶nnen ebenfalls verwendet werden,
+# um die Parametervalidierung und -beschrÃ¤nkungen anzupassen.
+
+# Aufrufen der Funktionen mit den Attributen
+SayHello -name "Alice"
+
+Greet -names "Bob", "Charlie", "David"
+
+"Server01", "Server02" | Process-Name
+
+Get-Info -computerName "Server01"
+
+Get-Info -CN "Server01"
+
+Write-Host "Weitere Attribute fÃ¼r Parameter wurden demonstriert."
