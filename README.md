@@ -23,5 +23,5 @@ https://stackoverflow.com/questions/54344622/why-my-powershell-script-is-not-res
 > since Write-Output sends an object to the console through the pipeline.
 
 ## Praktische Quellen:
-https://powershell.one/powershell-internals/attributes/parameters
-https://learn.microsoft.com/de-de/powershell/module/microsoft.powershell.core/?view=powershell-7.3 (ggf. Version auf 5 ändern)
+- https://powershell.one/powershell-internals/attributes/parameters
+- https://learn.microsoft.com/de-de/powershell/module/microsoft.powershell.core/?view=powershell-7.3 (ggf. Version auf 5 ändern)
