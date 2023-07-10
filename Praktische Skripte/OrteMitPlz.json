@@ -1,0 +1,194 @@
+[
+  {
+    "ort": "Berlin",
+    "plz": "10115",
+    "land": "DE",
+    "bundesland": "Berlin"
+  },
+  {
+    "ort": "Hamburg",
+    "plz": "20095",
+    "land": "DE",
+    "bundesland": "Hamburg"
+  },
+  {
+    "ort": "München",
+    "plz": "80331",
+    "land": "DE",
+    "bundesland": "Bayern"
+  },
+  {
+    "ort": "Köln",
+    "plz": "50667",
+    "land": "DE",
+    "bundesland": "Nordrhein-Westfalen"
+  },
+  {
+    "ort": "Frankfurt",
+    "plz": "60311",
+    "land": "DE",
+    "bundesland": "Hessen"
+  },
+  {
+    "ort": "Stuttgart",
+    "plz": "70173",
+    "land": "DE",
+    "bundesland": "Baden-Württemberg"
+  },
+  {
+    "ort": "Düsseldorf",
+    "plz": "40213",
+    "land": "DE",
+    "bundesland": "Nordrhein-Westfalen"
+  },
+  {
+    "ort": "Dortmund",
+    "plz": "44135",
+    "land": "DE",
+    "bundesland": "Nordrhein-Westfalen"
+  },
+  {
+    "ort": "Essen",
+    "plz": "45127",
+    "land": "DE",
+    "bundesland": "Nordrhein-Westfalen"
+  },
+  {
+    "ort": "Bremen",
+    "plz": "28195",
+    "land": "DE",
+    "bundesland": "Bremen"
+  },
+  {
+    "ort": "Dresden",
+    "plz": "01067",
+    "land": "DE",
+    "bundesland": "Sachsen"
+  },
+  {
+    "ort": "Leipzig",
+    "plz": "04109",
+    "land": "DE",
+    "bundesland": "Sachsen"
+  },
+  {
+    "ort": "Hannover",
+    "plz": "30159",
+    "land": "DE",
+    "bundesland": "Niedersachsen"
+  },
+  {
+    "ort": "Nürnberg",
+    "plz": "90402",
+    "land": "DE",
+    "bundesland": "Bayern"
+  },
+  {
+    "ort": "Duisburg",
+    "plz": "47051",
+    "land": "DE",
+    "bundesland": "Nordrhein-Westfalen"
+  },
+  {
+    "ort": "Bochum",
+    "plz": "44787",
+    "land": "DE",
+    "bundesland": "Nordrhein-Westfalen"
+  },
+  {
+    "ort": "Wuppertal",
+    "plz": "42103",
+    "land": "DE",
+    "bundesland": "Nordrhein-Westfalen"
+  },
+  {
+    "ort": "Bielefeld",
+    "plz": "33602",
+    "land": "DE",
+    "bundesland": "Nordrhein-Westfalen"
+  },
+  {
+    "ort": "Bonn",
+    "plz": "53111",
+    "land": "DE",
+    "bundesland": "Nordrhein-Westfalen"
+  },
+  {
+    "ort": "Mannheim",
+    "plz": "68159",
+    "land": "DE",
+    "bundesland": "Baden-Württemberg"
+  },
+  {
+    "ort": "Karlsruhe",
+    "plz": "76133",
+    "land": "DE",
+    "bundesland": "Baden-Württemberg"
+  },
+  {
+    "ort": "Münster",
+    "plz": "48143",
+    "land": "DE",
+    "bundesland": "Nordrhein-Westfalen"
+  },
+  {
+    "ort": "Wiesbaden",
+    "plz": "65183",
+    "land": "DE",
+    "bundesland": "Hessen"
+  },
+  {
+    "ort": "Augsburg",
+    "plz": "86150",
+    "land": "DE",
+    "bundesland": "Bayern"
+  },
+  {
+    "ort": "Gelsenkirchen",
+    "plz": "45879",
+    "land": "DE",
+    "bundesland": "Nordrhein-Westfalen"
+  },
+  {
+    "ort": "Braunschweig",
+    "plz": "38100",
+    "land": "DE",
+    "bundesland": "Niedersachsen"
+  },
+  {
+    "ort": "Chemnitz",
+    "plz": "09111",
+    "land": "DE",
+    "bundesland": "Sachsen"
+  },
+  {
+    "ort": "Kiel",
+    "plz": "24103",
+    "land": "DE",
+    "bundesland": "Schleswig-Holstein"
+  },
+  {
+    "ort": "Aachen",
+    "plz": "52062",
+    "land": "DE",
+    "bundesland": "Nordrhein-Westfalen"
+  },
+  {
+    "ort": "Halle",
+    "plz": "06108",
+    "land": "DE",
+    "bundesland": "Sachsen-Anhalt"
+  },
+  {
+    "ort": "Magdeburg",
+    "plz": "39104",
+    "land": "DE",
+    "bundesland": "Sachsen-Anhalt"
+  },
+  {
+    "ort": "Freiburg",
+    "plz": "79098",
+    "land": "DE",
+    "bundesland": "Baden-Württemberg"
+  }
+]

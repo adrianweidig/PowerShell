@@ -1,3 +1,5 @@
+# Vorhandene Parameter können via -"Tab" auch durchge"tab"t werden
+
 ##############################################
 # Abschnitt 1: Einführung in Funktionen
 ##############################################
@@ -163,3 +165,33 @@ Get-Info -computerName "Server01"
 Get-Info -CN "Server01"
 
 Write-Host "Weitere Attribute für Parameter wurden demonstriert."
+
+##############################################
+# Abschnitt 6: Verwendung von Write-Verbose
+##############################################
+
+Write-Host "`n### Abschnitt 6: Verwendung von Write-Verbose ###`n"
+
+# Funktion mit Write-Verbose definieren
+Function Get-InfoVerbose {
+    param (
+        [Parameter(Mandatory=$true)]
+        [String]$computerName
+    )
+
+    # Schritt 1: Informationen abrufen
+    Write-Verbose "Schritt 1: Informationen für den Computer $computerName abrufen..."
+    # Code zum Abrufen der Informationen
+
+    # Schritt 2: Informationen verarbeiten
+    Write-Verbose "Schritt 2: Informationen für den Computer $computerName verarbeiten..."
+    # Code zur Verarbeitung der Informationen
+
+    # Schritt 3: Informationen anzeigen
+    Write-Host "Informationen für den Computer $computerName anzeigen."
+    # Code zur Anzeige der Informationen
+}
+
+# Funktion aufrufen mit -Verbose-Parameter
+Get-InfoVerbose -computerName "Server01" -Verbose
+

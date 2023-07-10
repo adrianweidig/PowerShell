@@ -3,25 +3,25 @@
 # Deshalb immer Write-Output statt Host
 
 ##############################################
-# Abschnitt 1: Zeichen z‰hlen
+# Abschnitt 1: Zeichen z√§hlen
 ##############################################
 
-Write-Output "=== Abschnitt 1: Zeichen z‰hlen ===`n"
+Write-Output "=== Abschnitt 1: Zeichen z√§hlen ===`n"
 
 $strText1 = Read-Host "Gib einen Text ein"
 $anzahlZeichen = $strText1.Length
-Write-Output "Die Anzahl der Zeichen im Text betr‰gt: $anzahlZeichen"
+Write-Output "Die Anzahl der Zeichen im Text betr√§gt: $anzahlZeichen"
 
 
 ##############################################
-# Abschnitt 2: In Groﬂbuchstaben umwandeln
+# Abschnitt 2: In Gro√übuchstaben umwandeln
 ##############################################
 
-Write-Output "`n=== Abschnitt 2: In Groﬂbuchstaben umwandeln ===`n"
+Write-Output "`n=== Abschnitt 2: In Gro√übuchstaben umwandeln ===`n"
 
 $strText2 = Read-Host "Gib einen Text ein"
-$strGroﬂbuchstabenText = $strText2.ToUpper()
-Write-Output "Der Text in Groﬂbuchstaben lautet: $strGroﬂbuchstabenText"
+$strGro√übuchstabenText = $strText2.ToUpper()
+Write-Output "Der Text in Gro√übuchstaben lautet: $strGro√übuchstabenText"
 
 
 ##############################################
@@ -43,7 +43,7 @@ Write-Output "`n=== Abschnitt 4: Teilstring extrahieren ===`n"
 
 $strText4 = Read-Host "Gib einen Text ein"
 $startIndex4 = Read-Host "Gib den Startindex (Ganzzahl) ein"
-$strLaenge4 = Read-Host "Gib die L‰nge des Teilstrings (Ganzzahl) ein"
+$strLaenge4 = Read-Host "Gib die L√§nge des Teilstrings (Ganzzahl) ein"
 $strTeilstring = $strText4.Substring($startIndex4, $strLaenge4)
 Write-Output "Der extrahierte Teilstring lautet: $strTeilstring"
 
@@ -80,7 +80,7 @@ Write-Output "`n=== Abschnitt 7: Text verketten ===`n"
 $strText7a = Read-Host "Gib den ersten Text ein"
 $strText7b = Read-Host "Gib den zweiten Text ein"
 $strVerketteterText = $strText7a + $strText7b
-Write-Output "Die beiden Texte verkn¸pft ergeben: $strVerketteterText"
+Write-Output "Die beiden Texte verkn√ºpft ergeben: $strVerketteterText"
 
 
 ##############################################

@@ -75,3 +75,21 @@ try {
 } catch {
     Write-Host "Fehler beim Abrufen des Prozesses: $($Error[0].Exception.Message)"
 }
+
+##############################################
+# Abschnitt 10: Verbose-Ausgaben
+##############################################
+
+Write-Output "`n=== Abschnitt 10: Verbose-Ausgaben ===`n"
+
+$strText10 = Read-Host "Gib einen Text ein"
+
+# Entferne -verbose, sodass der Text nicht angezeigt wird.
+# Dies ist eine sinnvolle Verwendung bei Funktionen um zusätzliche
+# Informationen anzeigen zu lassen.
+Write-Output "Der Text wird jetzt verarbeitet..."
+Write-Verbose "Der eingegebene Text lautet: $strText10" -verbose
+
+# Weitere Verarbeitungsschritte hier...
+
+Write-Output "Die Verarbeitung des Textes wurde abgeschlossen."
