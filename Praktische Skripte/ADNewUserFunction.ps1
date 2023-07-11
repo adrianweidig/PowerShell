@@ -1,19 +1,19 @@
 function New-OwnADUser {
     param(
-        [Parameter(Mandatory=$true)]
+        [Parameter(Mandatory = $true)]
         [string]$Vorname,
         
-        [Parameter(Mandatory=$true)]
+        [Parameter(Mandatory = $true)]
         [string]$Nachname,
         
-        [Parameter(Mandatory=$true)]
+        [Parameter(Mandatory = $true)]
         [ValidateSet("S1", "S2", "S3", "S4", "S5", "S6", "Unbekannt")]
         [string]$Abteilung,
         
-        [Parameter(Mandatory=$false)]
+        [Parameter(Mandatory = $false)]
         [string]$Passwort,
         
-        [Parameter(Mandatory=$false)]
+        [Parameter(Mandatory = $false)]
         [string]$Ort
     )
 
@@ -30,7 +30,7 @@ function New-OwnADUser {
         $Path = "OU=standardbenutzer,OU=benutzer,OU=spielwiese,DC=spielwiese,DC=intern"
         $Enabled = $true
         $StandardPasswort = "P@ssw0rd"
-        $Ort = $Ort.Substring(0,1).ToUpper() + $Ort.Substring(1).ToLower()
+        $Ort = $Ort.Substring(0, 1).ToUpper() + $Ort.Substring(1).ToLower()
 
         Write-Verbose "SamAccountName: $SamAccountName"
         Write-Verbose "Name: $Name"
@@ -42,15 +42,15 @@ function New-OwnADUser {
         Write-Verbose "Abteilung: $Abteilung"
 
         $UserParams = @{
-            SamAccountName = $SamAccountName
-            Name = $Name
-            GivenName = $GivenName
-            Surname = $Surname
-            EmailAddress = $EmailAddress
+            SamAccountName    = $SamAccountName
+            Name              = $Name
+            GivenName         = $GivenName
+            Surname           = $Surname
+            EmailAddress      = $EmailAddress
             UserPrincipalName = $UserPrincipalName
-            Path = $Path
-            Enabled = $Enabled
-            Department = $Abteilung
+            Path              = $Path
+            Enabled           = $Enabled
+            Department        = $Abteilung
         }
 
         if ($Passwort) {
@@ -65,19 +65,28 @@ function New-OwnADUser {
         }
         
         if ($Ort) {
-            $jsonPath = "C:\temp\ort.json"
-            $jsonContent = Get-Content -Path $jsonPath -Raw | ConvertFrom-Json
-            $foundEntry = $jsonContent | Where-Object { $_.ort -eq $Ort }
+            try {
+                $jsonPath = "C:\temp\ort.json"
+                $jsonContent = Get-Content -Path $jsonPath -Raw | ConvertFrom-Json
+                $foundEntry = $jsonContent | Where-Object { $_.ort -eq $Ort }
             
-            if ($foundEntry) {
-                $UserParams.City = $foundEntry.ort
-                $UserParams.PostalCode = $foundEntry.plz
-                # Beachte, dass hier nur Ländercodes wie DE erlaubt sind
-                $UserParams.Country = $foundEntry.land
-                $UserParams.State = $foundEntry.bundesland
-            } else {
-                Write-Warning "Der Ort '$Ort' wurde nicht in der JSON-Datei gefunden."
+                if ($foundEntry) {
+                    $UserParams.City = $foundEntry.ort
+                    $UserParams.PostalCode = $foundEntry.plz
+                    # Beachte, dass hier nur Ländercodes wie DE erlaubt sind
+                    $UserParams.Country = $foundEntry.land
+                    $UserParams.State = $foundEntry.bundesland
+                }
+                else {
+                    Write-Warning "Der Ort '$Ort' wurde nicht in der JSON-Datei gefunden."
+                }
             }
+            catch {
+                Write-Host "Fehler beim Verarbeiten der json Datei $jsonPath ."
+                # Hier könnte man mit exit oder return arbeiten um passende Fehlerbehandlung
+                # mittels Fehlercode zu gewährleisten.
+            }
+            
         }
 
         New-ADUser @UserParams
