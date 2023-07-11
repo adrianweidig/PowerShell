@@ -1,10 +1,10 @@
 <#     
--eq: (equal)            Prüft, ob zwei Werte gleich sind.
--lt: (lower-than)       Prüft, ob ein Wert kleiner ist als ein anderer Wert.
--gt: (greater-than)     Prüft, ob ein Wert größer ist als ein anderer Wert.
--le: (lower-equal)      Prüft, ob ein Wert kleiner oder gleich einem anderen Wert ist.
--ge: (greater-equal)    Prüft, ob ein Wert größer oder gleich einem anderen Wert ist.
--ne: (not-equal)        Prüft, ob zwei Werte ungleich sind. 
+-eq: (equal)            Pr?ft, ob zwei Werte gleich sind.
+-lt: (lower-than)       Pr?ft, ob ein Wert kleiner ist als ein anderer Wert.
+-gt: (greater-than)     Pr?ft, ob ein Wert gr??er ist als ein anderer Wert.
+-le: (lower-equal)      Pr?ft, ob ein Wert kleiner oder gleich einem anderen Wert ist.
+-ge: (greater-equal)    Pr?ft, ob ein Wert gr??er oder gleich einem anderen Wert ist.
+-ne: (not-equal)        Pr?ft, ob zwei Werte ungleich sind. 
 #>
 
 ##############################################
@@ -13,11 +13,11 @@
 
 Write-Output "=== Abschnitt 1: Kontrollstruktur if-else ===`n"
 
-# Beispiel 1: Prüfen einer Bedingung mit if-else
+# Beispiel 1: Pr?fen einer Bedingung mit if-else
 $zahl = 10
 
 if ($zahl -gt 0) {
-    Write-Output "Die Zahl ist größer als 0."
+    Write-Output "Die Zahl ist gr??er als 0."
 } else {
     Write-Output "Die Zahl ist kleiner oder gleich 0."
 }
@@ -51,7 +51,7 @@ $zahl2 = 5
 if ($zahl1 -eq $zahl2) {
     Write-Output "Die Zahlen sind gleich."
 } elseif ($zahl1 -gt $zahl2) {
-    Write-Output "Zahl 1 ist größer als Zahl 2."
+    Write-Output "Zahl 1 ist gr??er als Zahl 2."
 } else {
     Write-Output "Zahl 1 ist kleiner als Zahl 2."
 }
@@ -96,7 +96,7 @@ switch ($tag) {
     "Friday"    { $wochentag = "Freitag" }
     "Saturday"  { $wochentag = "Samstag" }
     "Sunday"    { $wochentag = "Sonntag" }
-    default     { $wochentag = "Ungültiger Tag" }
+    default     { $wochentag = "Ung?ltiger Tag" }
 }
 
 Write-Output "Heute ist $wochentag."
@@ -121,10 +121,10 @@ while ($zahl -le 5) {
 
 
 ##############################################
-# Abschnitt 5: Fußgesteuerte Schleife (do-while)
+# Abschnitt 5: Fu?gesteuerte Schleife (do-while)
 ##############################################
 
-Write-Output "`n=== Abschnitt 4: Fußgesteuerte Schleife (do-while) ===`n"
+Write-Output "`n=== Abschnitt 4: Fu?gesteuerte Schleife (do-while) ===`n"
 
 # Beispiel: Zahlen von 1 bis 5 ausgeben
 $zahl = 1
@@ -135,14 +135,14 @@ do {
 } while ($zahl -le 5)
 
 # Es gibt die umgekehrte Variante mit until
-# Dies ist keine gängige Variante und wird deswegen nicht gelistet
+# Dies ist keine g?ngige Variante und wird deswegen nicht gelistet
 
 
 ##############################################
-# Abschnitt 6: Zählerschleife (for)
+# Abschnitt 6: Z?hlerschleife (for)
 ##############################################
 
-Write-Output "`n=== Abschnitt 5: Zählerschleife (for) ===`n"
+Write-Output "`n=== Abschnitt 5: Z?hlerschleife (for) ===`n"
 
 # Beispiel: Zahlen von 1 bis 5 ausgeben
 for ($zahl = 1; $zahl -le 5; $zahl++) {
@@ -151,10 +151,10 @@ for ($zahl = 1; $zahl -le 5; $zahl++) {
 
 
 ##############################################
-# Abschnitt 7: Zählerschleife (foreach)
+# Abschnitt 7: Z?hlerschleife (foreach)
 ##############################################
 
-Write-Output "`n=== Abschnitt 6: Zählerschleife (foreach) ===`n"
+Write-Output "`n=== Abschnitt 6: Z?hlerschleife (foreach) ===`n"
 
 # Beispiel: Elemente in einem Array ausgeben
 $tiere = "Hund", "Katze", "Maus"
