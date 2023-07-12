@@ -107,3 +107,12 @@ $strFormatierterText9 = "Name: {0}, Alter: {1}" -f $strText9, $strAlter9
 
 Write-Output "Der formatierte Text lautet:"
 Write-Output $strFormatierterText9
+
+##############################################
+# Abschnitt 10: Output verstecken
+##############################################
+
+# Versteckt den Output von z.B. Get-ChildItem um die Verarbeitung
+# zu gewährleisten ohne Text anzuzeigen (Quasi silent Mode)
+
+Get-ChildItem | Out-Null
