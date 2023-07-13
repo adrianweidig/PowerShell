@@ -20,7 +20,7 @@ Write-Output "`n### Abschnitt 1: Einführung in WPF ###`n"
 Add-Type -AssemblyName PresentationFramework
 
 # XAML-Daten aus Datei laden (Auskommentieren, falls InCode Variante (siehe oben) genutzt werden will)
-$XAML = [xml](Get-Content "E:\Programmierung\PowerShell\GUI\WPF\XAMLLayout.xaml")
+$XAML = [xml](Get-Content "E:\Programmierung\PowerShell\GUI\WPF\XAMLGrundlagen.xaml")
 
 # XAML-Daten laden
 $window=[Windows.Markup.XamlReader]::Load( (New-Object System.Xml.XmlNodeReader $XAML) )
