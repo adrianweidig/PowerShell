@@ -1,0 +1,10 @@
+﻿<!-- Beachte, bei dem Einbinden von externen Dateien Dinge wie x:Class="WpfApplication.MainWindow" wegzulassen, 
+wenn dies nicht explizit über eine Klasse aufgerufen und benötigt wird. -->
+<Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="300" Width="400">
+    <Grid>
+        <Button x:Name="MeinButton" Content="Klick mich!" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Label x:Name="MeinLabel" Content="Hallo, Welt!" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,50,0,0"/>
+    </Grid>
+</Window>

@@ -1,0 +1,5 @@
+﻿Versuchen sie grundsätzlich, wenn möglich, auf die Programmierung von GUI 
+in PowerShell zu verzichten, sondern ausgereifte GUI Frameworks von z.B.
+Python, Java, C# oder C++ zu nutzen, wenn sie moderne und performante
+grafische Oberflächen benötigen und die Datenverarbeitungs-Vorteile von
+Powershell in Verbindung mit Windows im Backend-Bereich zu nutzen.
