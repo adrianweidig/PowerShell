@@ -69,33 +69,42 @@ Zerlegung der Aufgabe in Teilschritte:
 18. Jeder ADMINISTRATOR soll Mitglied der Sicherheitsgruppe "g_<name_ou>_admins" sein
 19. Jeder ADMINISTRATOR soll Mitglied der Gruppe "Domänen-Admins" sein
 
-
-
-
 #>
 
-$domainname = "spielwiese.intern"
+# Ausgabe vorab
+$domainname = (Get-WmiObject Win32_ComputerSystem).Domain
+# Hinweis: -Discover sucht automatisch einen Domänencontroller, 
+# -NextClosestSite sucht den zum aktuell passenden Standort den nächsten
+$dc = (Get-ADDomainController -Discover -NextClosestSite).HostName
+$forestMode = (Get-ADForest).ForestMode
+$domainMode = (Get-ADDomain).DomainMode
+$pdc = (Get-ADDomain).PDCEmulator
+$ridMaster = (Get-ADDomain).RIDMaster
 $ADRoot = "DC=spielwiese,DC=intern"
 $bwPath = "OU=bundeswehr,$ADRoot"
 
+Write-Host "Domainname: $domain"
+Write-Host "Aktueller Domaincontroller: $dc"
+Write-Host "Forestmode: $forestMode"
+Write-Host "Domainmode: $domainMode"
+Write-Host "PDC-Emulator: $pdc"
+Write-Host "RID-Master: $ridMaster"
+
 # OU Bundeswehr löschen falls vorhanden
 
-# Überprüfen, ob die OU vorhanden ist
 $ou = Get-ADOrganizationalUnit -Filter "DistinguishedName -eq '$bwPath'"
 
 if ($ou) {
-    # Benutzer um Bestätigung bitten
     $confirmation = Read-Host "Die OU '$bwPath' und alle darunterliegenden OUs werden gelöscht. Möchten Sie fortfahren? (J/N)"
 
     if ($confirmation.ToLower() -eq "j") {
-        # OU und alle darunterliegenden OUs und Objekte löschen
         Remove-ADOrganizationalUnit -Identity $bwPath -Recursive
         Write-Host "Die OU '$bwPath' und alle darunterliegenden OUs wurden erfolgreich gelöscht."
     } else {
         Write-Host "Die Löschung der OU '$bwPath' wurde abgebrochen."
     }
 } else {
-    Write-Host "Die OU '$bwPath' existiert nicht."
+    Write-Host "Die OU '$bwPath' existiert noch nicht."
 }
 
 
