@@ -1,4 +1,4 @@
-# PowerShell
+# PowerShell (Wird seit 14.07.2023 nicht weiter bearbeitet)
 Einführungskurs PowerShell Teil 1 und 2
 - Beachten Sie, dass manche PowerShell Funktionen möglicherweise erweiterte Features von Windows Servern etc. benötigt
 und auch größere Fehler verursachen kann.
