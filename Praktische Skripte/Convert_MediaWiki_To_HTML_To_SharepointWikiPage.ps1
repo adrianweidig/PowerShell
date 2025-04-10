@@ -81,7 +81,7 @@ foreach ($page in $pages) {
     
     # Erstelle einen sicheren Dateinamen, indem unerlaubte Zeichen entfernt werden
     $safeTitle = $title -replace '[\\\/:*?"<>|]', ''
-    $fileName = "$safeTitle.aspx"
+    $fileName = "$safeTitle.html"  # Hier .html anstelle von .aspx
     $localFilePath = Join-Path $previewFolder $fileName
     
     # Hole alle Revisionen der Seite und wähle die letzte (aktuellste)
@@ -114,8 +114,8 @@ foreach ($page in $pages) {
          continue
     }
     
-    Write-Verbose "Speichere den konvertierten HTML-Inhalt der Seite '$title' als ASPX-Datei..."
-    # Speichere den konvertierten HTML-Inhalt in einer .aspx-Datei unter UTF8 (mit BOM)
+    Write-Verbose "Speichere den konvertierten HTML-Inhalt der Seite '$title' als HTML-Datei..."
+    # Speichere den generierten HTML-Inhalt in einer .html-Datei unter UTF8 (mit BOM)
     [System.IO.File]::WriteAllText($localFilePath, $htmlContent, [System.Text.Encoding]::UTF8)
     
     # Erstelle einen Eintrag für das Inhaltsverzeichnis
